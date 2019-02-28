@@ -334,10 +334,11 @@ class TaskScheduling extends Component
 
         $title = Yii::t('TasksModule.models_task', 'Deadline: ') . Html::encode($this->task->title);
 
-
         $result = [
 //            'id' => $this->id,
+            'uuid' => $this->task->content->guid,
             'title' => $title,
+            'description' => $this->task->description,
 //            'editable' => ($this->content->canEdit() || self::isTaskResponsible()),
             'editable' => false,
             //'color' => $color ? $color : TaskCalendar::DEFAULT_COLOR,
